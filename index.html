@@ -4,249 +4,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#101010">
-    <title>VibePlayer | Music Experience</title>
+
+    <title>VibePlayer | Music Player</title>
 
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="app">
+<header>
+    <h1>🎧 Vibe<span>Player</span></h1>
+    <p>Your music. Your mood. Your world.</p>
+</header>
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
+<main>
 
-        <div class="logo">
-            <span class="logo-icon">♫</span>
-            <span>Vibe<span class="orange">Player</span></span>
-        </div>
-
-        <div class="menu">
-            <p class="menu-title">MENU</p>
-
-            <button class="nav-item active" data-view="home">
-                <span>⌂</span> Home
-            </button>
-
-            <button class="nav-item" data-view="library">
-                <span>▤</span> Your Library
-            </button>
-
-            <button class="nav-item" data-view="favorites">
-                <span>♥</span> Favorites
-            </button>
-        </div>
-
-        <div class="playlist-section">
-            <p class="menu-title">YOUR PLAYLISTS</p>
-
-            <button class="playlist-link" data-playlist="Chill Vibes">
-                <span>◉</span> Chill Vibes
-            </button>
-
-            <button class="playlist-link" data-playlist="Workout Mix">
-                <span>◉</span> Workout Mix
-            </button>
-
-            <button class="playlist-link" data-playlist="Night Drive">
-                <span>◉</span> Night Drive
-            </button>
-
-            <button class="create-playlist" id="createPlaylist">
-                + Create Playlist
-            </button>
-        </div>
-
-        <div class="sidebar-bottom">
-            <div class="profile">
-                <div class="avatar">V</div>
-                <div>
-                    <strong>Music Lover</strong>
-                    <small>Premium Experience</small>
-                </div>
-            </div>
-        </div>
-
-    </aside>
-
-    <!-- MAIN CONTENT -->
-    <main class="main-content">
-
-        <header class="topbar">
-
-            <div class="navigation-arrows">
-                <button aria-label="Previous page">‹</button>
-                <button aria-label="Next page">›</button>
-            </div>
-
-            <div class="search-box">
-                <span>⌕</span>
-                <input type="search" id="searchInput"
-                       placeholder="Search songs, artists...">
-            </div>
-
-            <button class="user-button">V</button>
-
-        </header>
-
-        <section class="content">
-
-            <!-- HERO -->
-            <div class="hero">
-
-                <div class="hero-text">
-                    <span class="hero-label">YOUR MUSIC. YOUR WORLD.</span>
-
-                    <h1>Feel Every<br>
-                        <span class="orange">Beat.</span>
-                    </h1>
-
-                    <p>
-                        Discover your sound. Explore your rhythm.
-                        Experience music like never before.
-                    </p>
-
-                    <button class="primary-button" id="exploreButton">
-                        Explore Music <span>→</span>
-                    </button>
-                </div>
-
-                <div class="hero-art">
-                    <div class="hero-circle"></div>
-                    <div class="hero-disc">
-                        <div class="disc-center">♫</div>
-                    </div>
-                    <span class="floating-note note-one">♪</span>
-                    <span class="floating-note note-two">♫</span>
-                </div>
-
-            </div>
-
-            <!-- RECENTLY PLAYED -->
-            <section class="music-section" id="recentSection">
-
-                <div class="section-heading">
-                    <div>
-                        <h2>Recently Played</h2>
-                        <p>Get back to your favorite sounds</p>
-                    </div>
-                    <button class="text-button" id="viewAll">View all →</button>
-                </div>
-
-                <div class="track-grid" id="trackGrid"></div>
-
-            </section>
-
-            <!-- PLAYLISTS -->
-            <section class="music-section">
-
-                <div class="section-heading">
-                    <div>
-                        <h2>Made For You</h2>
-                        <p>Collections for every mood</p>
-                    </div>
-                </div>
-
-                <div class="collection-grid">
-
-                    <div class="collection-card" data-collection="Chill Vibes">
-                        <div class="collection-art chill">☁</div>
-                        <h3>Chill Vibes</h3>
-                        <p>Relax and unwind</p>
-                    </div>
-
-                    <div class="collection-card" data-collection="Workout Mix">
-                        <div class="collection-art workout">⚡</div>
-                        <h3>Workout Mix</h3>
-                        <p>Energy for your day</p>
-                    </div>
-
-                    <div class="collection-card" data-collection="Night Drive">
-                        <div class="collection-art night">☾</div>
-                        <h3>Night Drive</h3>
-                        <p>Sounds after dark</p>
-                    </div>
-
-                </div>
-
-            </section>
-
-        </section>
-
-    </main>
-
-</div>
-
-<!-- MUSIC PLAYER -->
-<footer class="player">
-
-    <div class="now-playing">
-
-        <img id="currentCover"
-             src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=200"
-             alt="Album cover">
-
-        <div class="song-details">
-            <strong id="currentTitle">Select a song</strong>
-            <small id="currentArtist">VibePlayer</small>
-        </div>
-
-        <button id="favoriteButton" class="icon-button"
-                aria-label="Add to favorites">♡</button>
-
+    <div class="welcome">
+        <h2>Discover Your Music</h2>
+        <p>Listen to your favorite songs anytime.</p>
     </div>
 
-    <div class="player-center">
+    <section class="music-list" id="musicList">
 
-        <div class="player-controls">
+        <div class="song-card">
+            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400" alt="Music artwork">
 
-            <button id="shuffleButton" class="control-button"
-                    aria-label="Shuffle">⤨</button>
+            <div class="song-info">
+                <h3>Can't Stay Down</h3>
+                <p>Quincy Larson</p>
+            </div>
 
-            <button id="previousButton" class="control-button"
-                    aria-label="Previous">|◀</button>
-
-            <button id="playButton" class="play-button"
-                    aria-label="Play">▶</button>
-
-            <button id="nextButton" class="control-button"
-                    aria-label="Next">▶|</button>
-
-            <button id="repeatButton" class="control-button"
-                    aria-label="Repeat">↻</button>
-
+            <audio controls loop preload="none">
+                <source src="https://cdn.freecodecamp.org/curriculum/js-music-player/can't-stay-down.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
         </div>
 
-        <div class="progress-container">
+        <div class="song-card">
+            <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=400" alt="Music artwork">
 
-            <span id="currentTime">0:00</span>
+            <div class="song-info">
+                <h3>Cruising for a Musing</h3>
+                <p>Quincy Larson</p>
+            </div>
 
-            <input type="range" id="progressBar"
-                   min="0" max="100" value="0">
-
-            <span id="duration">0:00</span>
-
+            <audio controls loop preload="none">
+                <source src="https://cdn.freecodecamp.org/curriculum/js-music-player/cruising-for-a-musing.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
         </div>
 
-    </div>
+        <div class="song-card">
+            <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400" alt="Music artwork">
 
-    <div class="player-right">
+            <div class="song-info">
+                <h3>Ihenile</h3>
+                <p>Trenches Man</p>
+            </div>
 
-        <span>🔊</span>
+            <audio controls loop preload="none">
+                <source src="songs/ihenile.mp3" type="audio/mpeg">
+            </audio>
+        </div>
 
-        <input type="range" id="volumeBar"
-               min="0" max="1" step="0.01" value="0.7">
+        <div class="song-card">
+            <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400" alt="Music artwork">
 
-    </div>
+            <div class="song-info">
+                <h3>Passo Bem Solto</h3>
+                <p>Brazilian Music</p>
+            </div>
 
+            <audio controls loop preload="none">
+                <source src="songs/passo-bem-solto.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <div class="song-card">
+            <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=400" alt="Music artwork">
+
+            <div class="song-info">
+                <h3>Baby</h3>
+                <p>Justin Bieber</p>
+            </div>
+
+            <audio controls loop preload="none">
+                <source src="songs/baby.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <div class="song-card">
+            <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=400" alt="Music artwork">
+
+            <div class="song-info">
+                <h3>Sorry</h3>
+                <p>Justin Bieber</p>
+            </div>
+
+            <audio controls loop preload="none">
+                <source src="songs/sorry.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+    </section>
+
+    <section class="upload-section">
+        <h2>Add Your Own Music</h2>
+        <p>Select MP3 files from your computer.</p>
+
+        <input type="file" id="musicUpload" accept="audio/*" multiple>
+
+        <div id="uploadedSongs"></div>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 VibePlayer | All Rights Reserved</p>
 </footer>
-
-<!-- AUDIO ENGINE -->
-<audio id="audioPlayer"></audio>
 
 <script src="script.js"></script>
 
